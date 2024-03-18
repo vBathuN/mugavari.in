@@ -189,7 +189,7 @@ animation-name: blinker;
   animation: marquee 67.5s linear infinite;
 }
 .ticker .stock-info {
-  background: linear-gradient(90deg, #000, #000 25%, #0a0 95%, #000 95%, #000);
+  background: #19f radial-gradient(transparent, #02c);
   box-shadow: -16px 0 20px #000;
   position: absolute;
   top: 0;
@@ -198,12 +198,12 @@ animation-name: blinker;
   height: 38px;
 }
 .ticker .stock-symbol {
-  background: linear-gradient(#666, #000);
+  background: #19f radial-gradient(transparent, #02c);
   -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
   border: 2px solid #fff;
   float: left;
-  width: 55px;
+  width: 52px;
   height: 33px;
 }
 .ticker .stock-symbol p {
