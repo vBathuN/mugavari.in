@@ -141,7 +141,7 @@ p {
   box-shadow: 0 0 2px #800 inset;
   bottom: 0;
   height: 5px;
-  width: 96%;
+  width: 100%;
 animation-name: blinker;
   animation-duration: 0.5s;
   animation-timing-function: linear;
