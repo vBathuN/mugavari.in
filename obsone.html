@@ -37,15 +37,38 @@ document.oncontextmenu = new Function("return false")
 <body>
 <div class='stream'>
 <iframe class="stream" width="100vh" height="100vh" src="https://mugavari.rtcs.live/stream" allow="autoplay" frameborder="0" autoplay; encrypted-media;></iframe>
+<div id="lowerThird">
+<div class="flexContainer">
+<!--   <div class="thirdsImg">
+    <img class="imgContainer" src="https://www.dropbox.com/s/98bx53zvkuqxxew/fakelogo.png?raw=1"/>
+  </div> -->
 </div>
-<div id="animation-2" class="animation">
-    <div class="red bold arimo mask">
-      <div>N.K.மூர்த்தி</div>
+<div class="flexContainer">
+  <div class="container" id="titleContainer">
+    <div class="box1 base">
     </div>
-    <div class="white light mask">
-      <div>ஆசிரியர் (Mugavari News)</div>
+    <div class="box2 color2">
+    </div>
+    <div class="box3 base">
+      <div class="text primTxt" id="titleText">
+        N.K.Moorthi
+      </div>
     </div>
   </div>
+  <div class="lineBreak"></div>
+  <div class="container" id="subTitleContainer">
+    <div class="box1 color1"></div>
+    <div class="box2 color2"></div>
+    <div class="box3 color1">
+      <div class="text secTxt" id="subTitleText">
+        Editor (Mugavari News)
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
 <!-- partial:index.partial.html -->
 <div class='main'>
   <div class='logo-area'>
@@ -82,6 +105,36 @@ document.oncontextmenu = new Function("return false")
 
 <!-- partial -->
   <script  src="./script.js"></script>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+
+const title = urlParams.get('title');
+const subTitle = urlParams.get('subTitle');
+const once = urlParams.get('once');
+
+if (title) {
+  document.getElementById('titleText').innerHTML = title; 
+  document.getElementById('titleContainer').style.display = 'block'; 
+}
+
+if (subTitle) {
+  document.getElementById('subTitleText').innerHTML = subTitle;  
+  document.getElementById('subTitleContainer').style.display = 'block'; 
+}
+
+if (once === true) {
+  setTimeout(function() {
+  document.getElementById('titleContainer').style.display = 'none';
+  document.getElementById('subTitleContainer').style.display = 'none';
+  }, 20000);
+}
+
+if (!title && !subTitle) {
+  document.getElementById('titleContainer').style.display = 'block';
+  document.getElementById('subTitleContainer').style.display = 'block';
+}
+</script>
 
 </body>
 </html>
