@@ -14,6 +14,7 @@ body {
   justify-content: flex-end;
   -webkit-justify-content: flex-end;
   height: 100vh;
+  overflow:hidden;
   margin: 0;
   text-transform: uppercase;
 }
@@ -188,86 +189,181 @@ animation-name: blinker;
   }
 }
 
-.animation {
-  z-index: 100;
-  width: 20em;
-  height: 4em;
-  margin: 10em 4em;
-  position: absolute;
+.base{
+  background-color:white;
 }
 
-.arimo {
-  font-family: Arimo;
+#titleContainer {
+  display: none;
 }
 
-.red {
-  color: $red;
+#subTitleContainer {
+  display: none;
 }
 
-.white {
-  color: white;
+.color1{
+  background-color: #8a4511;
 }
 
-.light {
-  font-weight: 500;
+.color2{
+  background-color: #8a4511;
 }
 
-.bold {
-  font-weight: 700;
+.primTxt{
+  color: #8a4511;
+  font-weight:800;
+  font-size:18px;
+  line-height:10px;
+  margin: 11.5px 0;
 }
 
-.mask {
-  overflow: hidden;
-  position: relative;
+.secTxt{
+  color:white;
+  font-weight:600;
+  font-size:14px;
+  line-height:10px;
+  margin:13px 0;
 }
 
-/*********************
-* Animation 2
-*********************/
-
-@keyframes animation-2-name {
-  0% {transform: translate3d(0, 100%, 0);}  
-  30% {transform: translate3d(0, 100%, 0);}  
-  60% {transform: translate3d(0, 0, 0);}
+#lowerThird{
+  display:flex;
 }
 
-@keyframes animation-2-title {
-  0% {transform: translate3d(0, -100%, 0);}  
-  30% {transform: translate3d(0, -100%, 0);}  
-  60% {transform: translate3d(0, 0, 0);}
+.thirdsImg{
+  height:80px;
+  width:80px;
+  overflow:hidden;
 }
 
-#animation-2 {
-  text-align: center;
-  
-  & > div {
-    width: 100%;
-    height: 1.5em;
-    
-    div {
-      position: absolute;
-      width: 100%;
-    }
+.imgContainer{
+  height:100%;
+  width:100%;
+  transform:translate3d(100%, 0, 0);
+  animation-name:img1;
+  animation-duration: 20s;
+  animation-delay:1s;
+  animation-iteration-count:infinite;
+}
+
+.flexContainer{
+  display:flex;
+  flex-flow: row wrap;
+  width:auto;
+  margin: 500px 0px;
+}
+
+.container{
+  position:relative;
+  overflow:hidden;
+  display:inline-flex;
+}
+
+.lineBreak{
+  width:100%;
+}
+
+.box1{
+  width:100%;
+  height:100%;
+  position:absolute;
+  transform:translate3d(-100%, 0, 0);
+  animation-name:box1;
+  animation-duration: 20s;
+  animation-iteration-count:infinite;
+}
+
+.box2{
+  width:100%;
+  height:100%;
+  position:absolute;
+  transform:translate3d(-100%, 0, 0);
+  animation-name:box2;
+  animation-delay:.05s;
+  animation-duration:20s;
+  animation-iteration-count:infinite;
+}
+
+.box3{
+  height:100%;
+  width:100%;
+  transform:translate3D(-100%, 0, 0);
+  overflow:hidden;
+  animation-name:box3;
+  animation-delay:.75s;
+  animation-duration:20s;
+  animation-iteration-count:infinite;
+}
+
+.text{
+  padding:0px 20px;
+  max-width:1420px;
+  animation-name:text1;
+  animation-delay:1s;
+  animation-duration:20s;
+  animation-iteration-count:infinite;
+  transform:translate3d(calc(-100% - 40px), 0, 0);
+}
+
+
+@keyframes img1{
+  2% {
+    transform:translate3d(100%, 0, 0);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   }
-  
-  & > div:first-child {
-    font-size: 2em;
-    color: red;
-    
-    div {
-      animation: 4s ease-out infinite alternate both animation-2-name;
-    }
+  8%, 60%{
+    transform:translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   }
-  
-  & > div:last-child {
-    font-size: 1em;
-
-    div {
-      animation: 4s ease-out infinite alternate both animation-2-title;
-    }
-  }
+  65%, 100% {transform:translate3d(100%, 0, 0)}
 }
 
+@keyframes box1{
+  0% {
+    transform:translate3d(-101%, 0, 0);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  6%, 60% {
+    transform:translate3d(0%, 0, 0);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  65%, 100% {transform:translate3d(-100%, 0, 0)}
+}
+
+@keyframes box2{
+  2% {
+    transform:translate3D(-101%, 0, 0);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  10%, 30% {
+    transform:translate3D(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  50%, 100% {transform:translate3D(-101%, 0, 0)}
+}
+
+@keyframes box3{
+  0% {
+    transform:translate3D(-100%, 0, 0);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  12%, 60% {
+    transform:translate3D(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  65%, 100% {transform:translate3D(-100%, 0, 0)}
+}
+
+@keyframes text1{
+  0% {
+    transform:translate3d(calc(-100% - 40px), 0, 0);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  6%, 70% {
+    transform:translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  72%, 100% {transform:translate3d(calc(-100% - 40px), 0, 0)}
+}
 .stream
 {
     width:1280px;
