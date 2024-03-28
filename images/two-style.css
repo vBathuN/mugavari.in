@@ -289,7 +289,7 @@ animation-name: blinker;
 }
 .stream
 {
-    width:70vh;
+    width:100vh;
     height: 720px;    
     margin-top: 0px;
     position: absolute;    
